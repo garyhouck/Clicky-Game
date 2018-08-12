@@ -1,21 +1,101 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FriendCard from "./components/FriendCard";
+import Wrapper from "./components/Wrapper";
+import friends from "./friends.json";
+import Jumbotron from "./components/Jumbotron";
+import Scorecard from "./components/Scorecard";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+// Function to shuffle order of images
+  function shuffleFriends(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
+    return array;
+};
+
+class App extends React.Component{ 
+    
+  state = {
+    friends,
+    score: 0,
+    message: "",
+    clicked: []
+  };
+  
+  // Click handle
+  handleClick = id => {
+    if (this.state.clicked.indexOf(id) === -1) {
+      this.handleIncrement();
+      this.setState({ clicked: this.state.clicked.concat(id) });
+    } else {
+      this.handleReset();
+    }
+  };
+
+  // Increment
+  handleIncrement = () => {
+    const newScore = this.state.score + 1;
+    this.setState({
+      score: newScore,
+      message: "Nice Work!",
+      message2: ""
+    });   
+    this.handleShuffle();
+  };
+
+  // Reset
+  handleReset = () => {
+    this.setState({
+      score: 0,
+      message: "",      
+      message2: "INCORRECT! WHY ARE YOU THE WAY THAT YOU ARE?",
+      clicked: [],      
+    });
+    this.handleShuffle();
+  };
+
+  // Shuffle
+  handleShuffle = () => {
+    let shuffledFriends = shuffleFriends(friends);
+    this.setState({ friends: shuffledFriends });
+  };
+
+render() {
+  return(
+    <div>
+      <Jumbotron>            
+      Click an image to earn points, but don't click the same one twice!
+      </Jumbotron>
+
+      <Scorecard
+      title = "SCORE:"
+      number={this.state.score} 
+      message={this.state.message}
+      message2={this.state.message2} 
+      />
+
+      <Wrapper>
+      {friends.map(
+      (friend) => {
+      return (     
+      <FriendCard      
+      id={friend.id}
+      image={friend.image}
+      handleClick={this.handleClick}
+      handleIncrement={this.handleIncrement}
+      handleReset={this.handleReset}
+      handleShuffle={this.handleShuffle}
+      key={friend.id}      
+      />      
+    )
+  }
+)}
+      </Wrapper>
+    </div>  
+  )
 }
 
+// End extend components
+}
 export default App;

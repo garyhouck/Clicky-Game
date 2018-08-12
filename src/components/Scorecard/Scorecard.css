@@ -1,0 +1,28 @@
+#scoreCard {
+    margin: 0;
+    color: black;
+    padding-left: 38px;
+    background-image: url("../Wrapper/wavy-dots.png");
+    padding-top: 10px;
+    font-weight: bolder;
+    border-bottom: 2px solid darkgray;    
+  }
+  li {
+    display: inline-block;
+    padding-right: 30px;
+  }
+  ul {
+    margin: 0;
+  }
+  #scoreNumber {
+    color: black;
+  }
+ #message {
+   color: black;
+ }
+ #message2 {   
+   font-weight: bolder;   
+   color: red;
+   -webkit-text-stroke-color: darkgray;
+   -webkit-text-stroke-width: 1px;
+ }
