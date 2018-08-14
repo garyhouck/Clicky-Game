@@ -59,5 +59,15 @@
         "id":12,
         "image": "https://i.pinimg.com/originals/1e/c8/c3/1ec8c3395cbf7ebe855a2a3fa92075fa.png",
         "clicked": false
+    },
+    {
+        "id":13,
+        "image": "https://i.kym-cdn.com/photos/images/original/001/092/217/4f6.jpg",
+        "clicked": false
+    },
+    {
+        "id":14,
+        "image": "https://escapetoreality.files.wordpress.com/2010/04/michael-scott.jpg",
+        "clicked": false
     }
 ]

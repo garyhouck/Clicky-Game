@@ -1,11 +1,11 @@
 #scoreCard {
     margin: 0;
-    color: black;
+    color: white;
     padding-left: 38px;
-    background-image: url("../Wrapper/wavy-dots.png");
+    /* background-image: url("../Wrapper/wavy-dots.png"); */
+    background-color: crimson;
     padding-top: 10px;
-    font-weight: bolder;
-    border-bottom: 2px solid darkgray;    
+    font-weight: bolder;    
   }
   li {
     display: inline-block;
@@ -13,16 +13,10 @@
   }
   ul {
     margin: 0;
-  }
-  #scoreNumber {
-    color: black;
-  }
- #message {
-   color: red;
- }
+  } 
  #message2 {   
    font-weight: bolder;   
-   color: red;
-   -webkit-text-stroke-color: darkgray;
+   color: black;
+   -webkit-text-stroke-color: white;
    -webkit-text-stroke-width: 1px;
  }

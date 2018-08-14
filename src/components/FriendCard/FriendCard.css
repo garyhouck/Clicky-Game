@@ -13,9 +13,7 @@
   }
   .card > .img-container {
     height: 100%;
-    overflow: hidden;
-    text-align: center;
-    background:#6CADDC;
+    overflow: hidden;    
   }
   .card > .img-container > img {
     width: 100%;

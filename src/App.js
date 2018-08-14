@@ -49,7 +49,7 @@ class App extends React.Component{
     this.setState({
       score: 0,
       message: "",      
-      message2: "INCORRECT! WHY ARE YOU THE WAY THAT YOU ARE?",
+      message2: "NOPE! You already clicked that one. Try Again.",
       clicked: [],      
     });
     this.handleShuffle();
